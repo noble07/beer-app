@@ -1,0 +1,7 @@
+.ui.card {
+  align-items: center;
+}
+
+.card img {
+  max-width: 75px !important;
+}
