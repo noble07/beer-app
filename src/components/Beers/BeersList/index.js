@@ -1,17 +1,13 @@
-import { Card, Loader } from "semantic-ui-react"
+import { Card} from "semantic-ui-react"
 import BeerCard from 'components/Beers/BeerCard'
-import useBeers from "hooks/useBeers"
 
-const BeersList = ({page}) => {
+const BeersList = ({beers}) => {
 
-  const {beers, isLoading} = useBeers({page})
 
   return (
     <Card.Group itemsPerRow={3} style={{marginTop: 25}} >
           {
-            isLoading 
-            ? <Loader active inline='centered' />
-            : beers.map(beer => 
+            beers.map(beer => 
                 <BeerCard
                   key={beer.id}
                   image={beer.image_url}

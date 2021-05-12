@@ -1,17 +1,16 @@
-import { useContext, useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 import getFilteredBeers from "services/getFilteredBeers"
-import BeerContext from 'context/BeerContext'
 
-const useFilterBeer = () => {
+const useFilterBeer = ({beers}) => {
   
   const [filterValue, setFilterValue] = useState('')
-  const {setBeers} = useContext(BeerContext)
+  const [filterdBeers, setFilterdBeers] = useState([])
   
   useEffect(() => {
-    getFilteredBeers({filterValue, setBeers})
-  }, [filterValue, setBeers])
+    setFilterdBeers(getFilteredBeers({filterValue, beers}))
+  }, [filterValue, beers])
   
-  return {setFilterValue}
+  return {setFilterValue, filterdBeers}
 }
 
 

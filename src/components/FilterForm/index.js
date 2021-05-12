@@ -1,21 +1,10 @@
-import useFilterBeer from "hooks/useFilterBeer"
-import { useState } from "react"
 import { Form, Segment } from "semantic-ui-react"
 
-const FilterForm = () => {
-
-  const [filterInput, setFilterInput] = useState('')
-  const {setFilterValue} = useFilterBeer()
+const FilterForm = ({ handleInputchange }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setFilterValue(filterInput)
   }
-
-  const handleInputchange = (e, {value}) => {
-    setFilterInput(value)
-  }
-  
 
   return (
     <Form onSubmit={handleSubmit}>

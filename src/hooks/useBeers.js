@@ -1,11 +1,12 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import getBeers from "services/getBeers"
-import BeerContext from 'context/BeerContext'
+
 
 const useBeers = ({ page = 1 } = {}) => {
 
   const [isLoading, setIsLoading] = useState(false)
-  const {beers, setBeers} = useContext(BeerContext)
+  const [beers, setBeers] = useState([])
+  console.log(beers);
 
   useEffect(() => {
     setIsLoading(true)
