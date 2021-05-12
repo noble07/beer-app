@@ -10,7 +10,6 @@ const FilterForm = ({ handleInputchange }) => {
     <Form onSubmit={handleSubmit}>
       <Segment>
         <Form.Input placeholder="Filtrat por..." name="filter" onChange={handleInputchange} />
-        <Form.Button content="Filtrar"  />
       </Segment>
     </Form>
   )
