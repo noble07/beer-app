@@ -21,8 +21,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/calculadora" component={Calculadora} />
-          </Switch>
-          
+          </Switch>  
       </Container>
     </Router>
   );

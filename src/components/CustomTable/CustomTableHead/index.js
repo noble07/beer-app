@@ -13,6 +13,7 @@ const CustomTableHead = ({headData}) => {
       }
     </TableRow>
   )
+
 }
 
 CustomTableHead.propType = {

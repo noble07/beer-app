@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CustomTableBody from 'components/CustomTable/CustomTableBody'
 import CustomTableHead from "components/CustomTable/CustomTableHead"
 
-const BeersList = ({tableData}) => {
+const CustomTable = ({tableData}) => {
 
   const [headTable, setHeadTable] = useState([])
 
@@ -26,8 +26,8 @@ const BeersList = ({tableData}) => {
   )
 }
 
-BeersList.propType = {
+CustomTable.propType = {
   tableData: PropTypes.array.isRequired
 }
 
-export default BeersList
+export default CustomTable
