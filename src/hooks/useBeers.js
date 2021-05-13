@@ -6,7 +6,6 @@ const useBeers = ({ page = 1 } = {}) => {
 
   const [isLoading, setIsLoading] = useState(false)
   const [beers, setBeers] = useState([])
-  console.log(beers);
 
   useEffect(() => {
     setIsLoading(true)

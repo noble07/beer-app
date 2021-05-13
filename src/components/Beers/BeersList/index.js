@@ -1,25 +1,33 @@
-import { Card} from "semantic-ui-react"
-import BeerCard from 'components/Beers/BeerCard'
+import { useEffect, useState } from "react"
+import {Table} from "semantic-ui-react"
+import PropTypes from 'prop-types';
+import CustomTableBody from 'components/CustomTable/CustomTableBody'
+import CustomTableHead from "components/CustomTable/CustomTableHead"
 
-const BeersList = ({beers}) => {
+const BeersList = ({tableData}) => {
 
+  const [headTable, setHeadTable] = useState([])
+
+  useEffect(() => {
+    if (tableData.length > 0){
+      setHeadTable(Object.keys(tableData[0]))
+    }
+  }, [tableData])
 
   return (
-    <Card.Group itemsPerRow={3} style={{marginTop: 25}} >
-          {
-            beers.map(beer => 
-                <BeerCard
-                  key={beer.id}
-                  image={beer.image_url}
-                  name={beer.name}
-                  firstBrewed={beer.first_brewed}
-                  tagline={beer.tagline}
-                  description={beer.description}
-                />
-              )
-          }
-    </Card.Group>
+    <Table color="black">
+      <Table.Header>
+        <CustomTableHead headData={headTable} />
+      </Table.Header>
+      <Table.Body>
+        <CustomTableBody bodyData={tableData} />
+      </Table.Body>
+    </Table>
   )
+}
+
+BeersList.propType = {
+  tableData: PropTypes.array.isRequired
 }
 
 export default BeersList
